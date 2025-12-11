@@ -56,28 +56,28 @@ def main() -> None:
     植物の１週間をシミュレートするメイン関数
     """
     # 1.植物作成(配列として初期化)
-    Plants = [
+    plants = [
         Plant("Rose", 25, 30),
         Plant("Sunflower", 80, 45),
         Plant("Cactus", 15, 120)
     ]
 
     # 2.成長前のinfoを記録して標準出力
-    init_height = {p.name: p.height for p in Plants}
+    init_height = {p.name: p.height for p in plants}
     print("=== Day 1 ===")
-    for plant in Plants:
+    for plant in plants:
         print(plant.get_info())
 
     # 3.成長日数を設定
     growth_days = 6
     for _ in range(growth_days):
-        for plant in Plants:
+        for plant in plants:
             plant.age(1)
             plant.grow(1)
 
     # 4.成長後のinfoを出力
     print(f"=== Day {1 + growth_days} ===")
-    for plant in Plants:
+    for plant in plants:
         print(plant.get_info())
 
         growth = plant.height - init_height[plant.name]

@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
+"""
+File: File: ft_plant_factory.py
+Plantクラスを使用して、効率的に大量の植物インスタンスを生成するプログラムです。
+データリストに基づき、工場（Factory）のように連続して植物を作成します。
+"""
+
 
 class Plant:
     """
-    成長機能を持つ庭の植物を表すクラスです
+    庭の植物を表すクラスです
 
     Attributes:
         name (str): 植物の名前
@@ -23,24 +29,6 @@ class Plant:
         self.height: int = init_height
         self.plant_age: int = init_age
 
-    def grow(self, size: int) -> None:
-        """
-        植物の高さを増加させます。
-
-        Args:
-            size (int): 成長する高さ (cm)
-        """
-        self.height += size
-
-    def age(self, day: int) -> None:
-        """
-        植物の年齢を増加させます。
-
-        Args:
-            day(int): 増加する日数
-        """
-        self.plant_age += day
-
     def get_info(self) -> str:
         """
         植物の情報を整形した文字列として返す。
@@ -48,8 +36,33 @@ class Plant:
         Returns:
             str: /整形した植物情報（Name、Height、Age）
         """
-        return f"{self.name}: {self.height}cm, {self.plant_age} days old"
+        return f"{self.name} ({self.height}cm, {self.plant_age} days)"
 
+
+def main() -> None:
+    """
+    植物工場のmain関数
+    データリストから植物を生成し、その詳細を出力する。
+    """
+    # 1.作成データ（タプル）
+    plants = [
+        ("Rose", 25, 30),
+        ("Oak", 200, 365),
+        ("Cactus", 5, 90),
+        ("Sunflower", 80, 45),
+        ("Fern", 15, 120)
+    ]
+
+    print("=== Plant Factory Output ===")
+
+    # 2.植物の作成と情報の出力
+    count = 0
+    for name, height, age in plants:
+        new_plant = Plant(name, height, age)
+        print(f"Created: {new_plant.get_info()}")
+        count += 1
+
+    print(f"\nTotal plants created: {count}")
 
 
 if __name__ == "__main__":

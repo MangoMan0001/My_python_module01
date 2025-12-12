@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+"""成長シミュレーター"""
+
 
 class Plant:
     """
@@ -70,10 +72,12 @@ def main() -> None:
 
     # 3.成長日数を設定
     growth_days = 6
-    for _ in range(growth_days):
+    days = 0
+    while days < growth_days:
         for plant in plants:
             plant.age(1)
             plant.grow(1)
+        days += 1
 
     # 4.成長後のinfoを出力
     print(f"=== Day {1 + growth_days} ===")

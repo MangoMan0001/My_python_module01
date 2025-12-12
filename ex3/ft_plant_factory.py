@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """
-File: File: ft_plant_factory.py
-Plantクラスを使用して、効率的に大量の植物インスタンスを生成するプログラムです。
-データリストに基づき、工場（Factory）のように連続して植物を作成します。
+データリストに基づき、工場（Factory）のように連続して植物を作成する。
 """
 
 

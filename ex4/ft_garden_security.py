@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-File: ft_garden_security.py
-データの整合性を守るために、GetterとSetterを実装しています。
+成長シミュレーターj
 負の値などの不正なデータをブロックするセキュリティ機能を持っています。
 """
 
@@ -82,27 +81,18 @@ class SecurePlants:
     def grow(self, size: int) -> None:
         """
         植物の高さを増加させます。
-
-        Args:
-            size (int): 成長する高さ (cm)
         """
         self.height += size
 
     def age(self, day: int) -> None:
         """
         植物の年齢を増加させます。
-
-        Args:
-            day(int): 増加する日数
         """
         self.plant_age += day
 
     def get_info(self) -> str:
         """
         植物の情報を整形した文字列として返す。
-
-        Returns:
-            str: /整形した植物情報（Name、Height、Age）
         """
         return f"{self._name} ({self._height}cm, {self._age} days)"
 

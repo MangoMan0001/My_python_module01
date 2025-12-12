@@ -29,6 +29,9 @@ class Plant:
         """
         return f"{self.name} ({self.height}cm, {self.age} days)"
 
+    def get_type(self) -> str:
+        return "Plant"
+
 
 class Flower(Plant):
     """
@@ -50,7 +53,7 @@ class Flower(Plant):
         """
         花が咲く
         """
-        print(f"{self.name} is blooming beautifully!\n")
+        print(f"{self.name} is blooming beautifully!")
 
     def get_info(self) -> str:
         """
@@ -62,6 +65,9 @@ class Flower(Plant):
             f"{self.age} days, "
             f"{self.color} color"
         )
+
+    def get_type(self) -> str:
+        return "Flower"
 
 
 class Tree(Plant):
@@ -97,6 +103,9 @@ class Tree(Plant):
             f"{self.trunk_diameter}cm diameter"
         )
 
+    def get_type(self) -> str:
+        return "Tree"
+
 
 class Vegetable(Plant):
     """
@@ -131,6 +140,9 @@ class Vegetable(Plant):
             f"{self.harvest_season} harvest"
             )
 
+    def get_type(self) -> str:
+        return "Vegetable"
+
 
 def main():
     """
@@ -151,17 +163,18 @@ def main():
 
     # 2.情報を出力
     for plant in plants:
+        print()
         print(plant.get_info())
 
-        if isinstance(plant, Flower):
+        if plant.get_type() == "Flower":
             plant.bloom()
-        elif isinstance(plant, Tree):
+        elif plant.get_type() == "Tree":
             print(
                 f"{plant.name} provides {plant.gen_shade()} "
-                f"square meters of shade\n"
+                f"square meters of shade"
                 )
-        elif isinstance(plant, Vegetable):
-            print(f"{plant.name} is rich in {plant.nutritional_value}\n")
+        elif plant.get_type() == "Vegetable":
+            print(f"{plant.name} is rich in {plant.nutritional_value}")
 
 
 if __name__ == "__main__":

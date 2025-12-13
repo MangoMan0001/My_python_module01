@@ -69,7 +69,7 @@ class PrizeFlower(FloweringPlant):
         """
         植物の情報を整形した文字列として返す
         """
-        return f"{super().get_info()}, Prize point: {self.point}"
+        return f"{super().get_info()}, Prize points: {self.point}"
 
     def get_type(self) -> None:
         return "PrizeFlower"
@@ -110,7 +110,7 @@ class GardenManager:
         @staticmethod
         def put_garden_score(gardeners: list["GardenManager"]):
             stats = GardenManager.GardenStats
-            print("Garden score - ", end="")
+            print("Garden scores - ", end="")
             for target_gardener in gardeners:
                 print(
                     f"{target_gardener.gardener}: "
@@ -212,7 +212,7 @@ def main():
     # 2.庭に植物を植えた
     bob.add_plant(("test", 92))
     plants = (
-        ("Oak", 100),
+        ("Oak Tree", 100),
         ("Rose", 25, "red"),
         ("Sunflower", 50, "yellow", 10),
     )
